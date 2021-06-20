@@ -8,7 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appifax</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -20,15 +23,18 @@
         </a>
         <ul id="navBar" class="navBar">
 
+            <!-- For logged in people -->
             <li class="logged-in" style="display: none;">
                 <a href="#" data-target="modal-account">Account</a>
             </li>
             <li class="logged-in" style="display: none;">
                 <a href="#" id="logout">Logout</a>
             </li>
-            <li class="admin" style="display: none;">
+            <li class="logged-in" style="display: none;">
                 <a href="#" data-target="modal-create">Dashboard</a>
             </li>
+
+            <!-- For logged out people  -->
             <li class="logged-out" style="display: none;">
                 <a href="#" data-target="modal-login">Login</a>
             </li>
@@ -43,8 +49,8 @@
 
 <body>
     <div class="Box" id="Box">
-        <div class="form-Box sign-up-Box">
-
+        <!-- Sign up -->
+        <div id="sign-up-Box" class="form-Box sign-up-Box">
             <form action="">
                 <h1>Create Account</h1>
                 <input type="text" name="name" placeholder="Name">
@@ -54,7 +60,8 @@
             </form>
 
         </div>
-        <div class="form-Box sign-in-Box">
+        <!-- Sign in -->
+        <div id="form-Box sign-in-Box" class="form-Box sign-in-Box">
             <form action="#">
                 <h1>Sign In</h1>
                 <input type="email" name="email" placeholder="Email">
@@ -74,7 +81,7 @@
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Welcome Back!</h1>
-                    <p>Sign In and get started</p>
+                    <p>Sign In and Get Started</p>
                     <button class="transparentButton" id="signUp">SIGN UP</button>
                 </div>
             </div>
