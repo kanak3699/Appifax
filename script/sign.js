@@ -18,11 +18,33 @@ function signup() {
     var email = document.getElementById("emailSignUp").value;
     var password = document.getElementById("passwordSignUp").value;
     const auth = firebase.auth();
-    const promise = auth.createUserWithEmailAndPassword(email, password);
-    promise.then(alert("Success"));
-    promise.catch(e => alert(e.message));
-
+    // const promise = auth.createUserWithEmailAndPassword(email, password);
+    // promise.then(()
+    //     if(localStorage.getItem('type') == 'customer') {}
+    // );
+    auth.createUserWithEmailAndPassword(email, password).then(() => {
+        if (localStorage.getItem('type') == 'customer') {
+            window.location.href = "./index.html";
+        }
+        else {
+            window.location.href = "./businessSide.html"
+        }
+    }).catch(() => {
+        alert('Problem Signing up')
+    })
     // alert('Sign Up');
+}
+
+function onSignOut() {
+    console.log(firebase);
+
+    firebase.auth().signOut().then(() => {
+        console.log("Sign out successs")
+        window.location.href = "./landing.html"
+        // Sign-out successful.
+    }).catch((error) => {
+        // An error happened.
+    });
 }
 
 
@@ -36,8 +58,13 @@ function login() {
             var user = userCredential.user;
             console.log("Login")
             // window.alert("Welcome back to Appifax " + user);
-            window.alert("Login" + user);
-
+            // window.alert("Login" + user);
+            if (localStorage.getItem('type') == 'customer') {
+                window.location.href = "./index.html";
+            }
+            else {
+                window.location.href = "./businessSide.html"
+            }
             // ...
         })
         .catch((error) => {
@@ -49,4 +76,6 @@ function login() {
 }
 
 
-
+function onLogoClick() {
+    window.location.href = "./landing.html";
+}
