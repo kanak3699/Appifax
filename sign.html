@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Double Slider Animation Reference: https://www.freecodecamp.org/news/how-to-build-a-double-slider-sign-in-and-sign-up-form-6a5d03612a34/ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appifax</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <!-- Include sign.js -->
+    <script src="script/sign.js">  </script>
+
+</head>
+
+<nav class="navigaton">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">
+            <img src="LOGO.png" onclick="onLogoClick()">
+        </a>
+        <ul id="navBar" class="navBar">
+
+            <!-- For logged in people -->
+            <li class="logged-in" style="display: none;">
+                <a href="#" data-target="modal-account">Account</a>
+            </li>
+            <li class="logged-in" style="display: none;">
+                <a href="#" id="logout">Logout</a>
+            </li>
+            <li class="logged-in" style="display: none;">
+                <a href="#" data-target="modal-create">Dashboard</a>
+            </li>
+
+            <!-- For logged out people  -->
+            <li class="logged-out" style="display: none;">
+                <a href="#" data-target="modal-login">Login</a>
+            </li>
+            <li class="logged-out" style="display: none;">
+                <a href="#" data-target="modal-signup">Sign up</a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+<body>
+
+
+    <div class="Box" id="Box">
+        <!-- Sign up -->
+        <div id="sign-up-Box" class="form-Box sign-up-Box">
+            <form>
+                <h1>Create Account</h1>
+                <input type="text" id="name" name="name" placeholder="Name">
+                <input type="email" id="emailSignUp" name="email" placeholder="Email">
+                <input type="password" id="passwordSignUp" name="password" placeholder="Password">
+
+                <button id="signUpButton" type="button" onclick="signup()">SIGN UP</button>
+            </form>
+
+        </div>
+        <!-- Sign in -->
+        <div id="form-Box sign-in-Box" class="form-Box sign-in-Box">
+            <form>
+                <h1>Sign In</h1>
+                <input id="emailLogin" type="email" name="email" placeholder="Email">
+                <input id="passwordLogin" type="password" name="password" placeholder="Password">
+                <a href="#">Forgot Your Password</a>
+                <button onclick="login()" type="button" id="loginButton">SIGN IN</button>
+            </form>
+        </div>
+
+
+
+        <!-- Transparent Button  -->
+        <div class="overlay-Box">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome to Appifax!</h1>
+                    <p>Already using Appifax ? </p>
+                    <button class="transparentButton" id="signIn">SIGN IN</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Welcome to Appifax!</h1>
+                    <p>New to Appifax ? Sign Up and Get Started</p>
+                    <button class="transparentButton" id="signUp">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Signup Trasition -->
+
+    <script type="text/javascript">
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const Box = document.getElementById('Box');
+
+        signUpButton.addEventListener('click', () => {
+            Box.classList.add("right-panel-active");
+        });
+        signInButton.addEventListener('click', () => {
+            Box.classList.remove("right-panel-active");
+        });
+
+    </script>
+
+</body>
+
+</html>
