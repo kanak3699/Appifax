@@ -23,6 +23,7 @@ function signup() {
     //     if(localStorage.getItem('type') == 'customer') {}
     // );
     auth.createUserWithEmailAndPassword(email, password).then(() => {
+        console.log(localStorage.getItem('type'))
         if (localStorage.getItem('type') == 'customer') {
             window.location.href = "./index.html";
         }
@@ -36,7 +37,7 @@ function signup() {
 }
 
 function onSignOut() {
-    console.log(firebase);
+
 
     firebase.auth().signOut().then(() => {
         console.log("Sign out successs")
@@ -57,6 +58,7 @@ function login() {
             // Signed in
             var user = userCredential.user;
             console.log("Login")
+            console.log(localStorage.getItem('type'))
             // window.alert("Welcome back to Appifax " + user);
             // window.alert("Login" + user);
             if (localStorage.getItem('type') == 'customer') {
