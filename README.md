@@ -30,7 +30,7 @@ We are developing Appifax, a Halifax point-based membership webapp that can be u
 
 ## Website Support / Prerequisites
 
-[Appifax Webapp] (https://syed-space1.github.io/Appifax-CSCI4193/landing.html) is supported and Tested in the following browsers 
+[Appifax Webapp](https://syed-space1.github.io/Appifax-CSCI4193/landing.html) is supported and Tested in the following browsers 
 - Google Chrome 
 - Mozilla Firefox
 - Safari
