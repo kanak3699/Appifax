@@ -35,6 +35,10 @@ The website is supported and Tested in the following browsers
 - Mozilla Firefox
 - Safari
 
+## Database
+
+Appifax uses [Google's Firebase](https://firebase.google.com/docs/) for Authenticating the user credentials.
+- Firebase Authentication to easily allow your users to sign into your app.
 
 
 ## Contributors
