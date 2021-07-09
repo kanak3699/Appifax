@@ -13,17 +13,13 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+// This is the signup Function
 function signup() {
-
-    var email = document.getElementById("emailSignUp").value;
-    var password = document.getElementById("passwordSignUp").value;
+        // Variables
+    let email = document.getElementById("emailSignUp").value;
+    let password = document.getElementById("passwordSignUp").value;
     const auth = firebase.auth();
-    // const promise = auth.createUserWithEmailAndPassword(email, password);
-    // promise.then(()
-    //     if(localStorage.getItem('type') == 'customer') {}
-    // );
     auth.createUserWithEmailAndPassword(email, password).then(() => {
-        console.log(localStorage.getItem('type'))
         if (localStorage.getItem('type') == 'customer') {
             window.location.href = "./index.html";
         }
@@ -36,11 +32,9 @@ function signup() {
     // alert('Sign Up');
 }
 
+// Signout function
 function onSignOut() {
-
-
     firebase.auth().signOut().then(() => {
-        console.log("Sign out successs")
         window.location.href = "./landing.html"
         // Sign-out successful.
     }).catch((error) => {
@@ -48,17 +42,16 @@ function onSignOut() {
     });
 }
 
+// Login Function
 
 function login() {
-    var email = document.getElementById('emailLogin').value;
-    var password = document.getElementById('passwordLogin').value;
+    let email = document.getElementById('emailLogin').value;
+    let password = document.getElementById('passwordLogin').value;
 
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
-            console.log("Login")
-            console.log(localStorage.getItem('type'))
             // window.alert("Welcome back to Appifax " + user);
             // window.alert("Login" + user);
             if (localStorage.getItem('type') == 'customer') {
@@ -72,11 +65,11 @@ function login() {
         .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log(error)
         });
 
 }
 
+// onLogoClick Function - Redirects to Landing page
 
 function onLogoClick() {
     window.location.href = "./landing.html";
