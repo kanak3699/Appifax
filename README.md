@@ -14,9 +14,9 @@ We are developing [Appifax](https://syed-space1.github.io/Appifax-CSCI4193/landi
 
 ### Business
 ------------
-- The businesses will be able to publish coupons & discount deals.
-- The businesses will be able to see thir revenue in charts and in numerical format.
-- The businesses will be able to upgrade to memebership for more advanced features.
+- The businesses will be able to publish(post) coupons/discount deals/sepcial offers to the customers(members) and gain access to more customers.
+- The businesses will be able to see their revenue in charts and in numerical format.
+- The businesses will be able to upgrade to membership for more advanced features.
 
 
 ### Customer
@@ -24,7 +24,7 @@ We are developing [Appifax](https://syed-space1.github.io/Appifax-CSCI4193/landi
 
 - The customers will be able to find the local businesses in their area.
 - The customers will be able to apply coupons.
-- The customers will be able to upgrade to premium memebership for early access on discounts and coupons.
+- The customers will be able to upgrade to premium membership for early access on discounts and coupons.
 - The customers will be able to collect and redeem points.
 - The customers will be able to get address and contact details of the business from the website.
 
