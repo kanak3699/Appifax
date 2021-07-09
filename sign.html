@@ -71,7 +71,7 @@
                 <h1>Create Account</h1>
                 <input type="text" id="name" name="name" placeholder="Name">
                 <input type="email" id="emailSignUp" name="email" placeholder="Email">
-                <input type="password" id="passwordSignUp" name="password" placeholder="Password">
+                <input type="password" id="passwordSignUp" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
 
                 <button id="signUpButton" type="button" onclick="signup()">SIGN UP</button>
             </form>
